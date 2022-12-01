@@ -7,6 +7,7 @@ const ToggleButton = () => {
     const setActivePanel = useSetRecoilState(activePanel)
     const activeId = useRecoilValue(activePanel)
 
+
     const handleClick = ({id}) => setActivePanel(id)
 
     return(
@@ -17,9 +18,9 @@ const ToggleButton = () => {
         sx={{height:'14px',marginBottom:'20px'}}
 
         >
-            <Button onClick={()=>handleClick({id:"board_match"})} value="Board Match">Board Match</Button>
-            <Button onClick={()=>handleClick({id:"related"})} value="Related">Related</Button>
-            <Button onClick={()=>handleClick({id:"questions"})} value="Questions">Questions</Button>
+            <Button onClick={()=>handleClick({id:"board_match"})} style={{ background: activeId==="board_match" ?  '#B2FFFF' : '#ebebeb'}} value="Board Match">Board Match</Button>
+            <Button onClick={()=>handleClick({id:"related"})} style={{ background: activeId==="related" ?  '#B2FFFF' : '#ebebeb'}} value="Related">Related</Button>
+            <Button onClick={()=>handleClick({id:"questions"})} style={{ background: activeId==="questions" ?  '#B2FFFF' : '#ebebeb'}} value="Questions">Questions</Button>
     </ToggleButtonGroup>
 )};
     

@@ -20,11 +20,12 @@ export const selectedRow = atom({
     },
         cpc:0.24,
         competition:0.12,
-        results:313000000,
+        results:'313M',
         difficulty:{
             rating: "Possible",
             text:"Slightly more competition. You'll need well-structured and unique content appropriately optimized for your keywords.",
-            percent:46,
+            percentage:46,
+            class:'possible'
         }
     }
 })

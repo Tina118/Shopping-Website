@@ -6,9 +6,9 @@ import styled from 'styled-components'
 const Badge=styled(Flex)`
 
     &.badges{
-        padding: 2px 14px;
+        padding: 4px 14px;
         border-radius: 50rem;
-        font-size: 10px;
+        font-size: 11px;
         align-items:center;
         justify-content:center;
     }
@@ -24,7 +24,7 @@ const Badge=styled(Flex)`
 
     &.commercial{
         background-color: #FCE081;
-        color: #A75800;    
+        color: #A75800; 
     }
 
     &.informational{
@@ -40,6 +40,12 @@ const Badge=styled(Flex)`
     &.transactional{
         background-color: #9EF2C9;
         color: #007C65;
+    }
+
+    &:hover + div {
+        display: block;
+        color: green;
+        font-size: 25px;
     }
 
     

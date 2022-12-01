@@ -74,6 +74,6 @@ export const normaliseData = (data) =>
         intent: {...intentMap[data[2]]},
         cpc:data[3],
         competition:data[4],
-        results:data[5],
+        results:Number(data[5])!==0 ? `${Number(data[5])/1000000}M` : '0M',
         difficulty: {...keywordDifficulty[level(data[7])[0][0]], percentage:data[7]}
 }));

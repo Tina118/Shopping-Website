@@ -1,6 +1,8 @@
 import {Flex} from 'rebass';
 import {useRecoilValue} from 'recoil';
 
+import { Typography } from '@mui/material';
+
 import useShoppingData from '../../api';
 import {MiniCard, ShoppingCard, ShoppingTable ,ToggleButton,ToggleContent,Badge} from '../../components';
 import {selectedRow} from '../../recoil/atom';
@@ -14,13 +16,14 @@ const ShoppingDetails=()=> {
     const {intent,results,cpc,competition} = useRecoilValue(selectedRow)
 
     return (
-        <Flex flexDirection="column" justifyContent="center" alignItems="center"  >
+        <Flex justifyContent="center">
+        <Flex flexDirection="column" justifyContent="center" alignItems="flex-start" >
             <Flex>
                 <ShoppingCard />
-                <Flex flexDirection="column"  marginLeft="20px" title="Hello">
+                <Flex flexDirection="column"  marginLeft="30px" title="Hello">
                     <MiniCard data={[{title:"Intent",value: <Badge className={`${intent?.type?.toLowerCase()} badges`} title={intent?.hoverText}>{intent?.type}</Badge>}]}/>
-                    <MiniCard data={[{title:"Results", value:results}]}/>
-                    <MiniCard data={[{title:"CPC", value:cpc},{title:'Com.',value:competition}]}/>
+                    <MiniCard data={[{title:"Results", value:<Typography ffontSize="20px" fontWeight="bold">{results}</Typography>}]}/>
+                    <MiniCard data={[{title:"CPC", value:<Typography ffontSize="20px" fontWeight="bold">{`$ ${cpc}`}</Typography>},{title:'Com.',value:<Typography ffontSize="20px" fontWeight="bold">{competition}</Typography>}]}/>
             </Flex>
             </Flex>
                 <ToggleButton  />
@@ -31,6 +34,8 @@ const ShoppingDetails=()=> {
                 <ToggleContent id="questions">{questions && <ShoppingTable columns={columns} data={questions} />}</ToggleContent>
             </Flex>
             </Flex>
+            </Flex>
+        
 )}
 
 export default ShoppingDetails;
