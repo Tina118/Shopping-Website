@@ -1,4 +1,4 @@
-import { Typography ,ToggleButton as Button,ToggleButtonGroup} from '@mui/material';
+import { ToggleButton as Button,ToggleButtonGroup} from '@mui/material';
 
 import {useSetRecoilState,useRecoilValue} from 'recoil';
 import { activePanel } from '../../recoil/atom';

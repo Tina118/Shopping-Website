@@ -11,7 +11,6 @@ const getShoppingData = () =>{
     const boardMatchData = normaliseData(shoppingInfo?.raw_broadmatch_data)
     const questions = normaliseData(shoppingInfo?.raw_question_data)
 
-
     return {relatedData, boardMatchData, questions}
 }
 

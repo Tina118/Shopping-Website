@@ -2,7 +2,7 @@ import {Flex} from 'rebass';
 import {useRecoilValue} from 'recoil';
 
 import useShoppingData from '../../api';
-import {MiniCard, ShoppingCard, ShoppingTable ,ToggleButton,ToggleContent} from '../../components';
+import {MiniCard, ShoppingCard, ShoppingTable ,ToggleButton,ToggleContent,Badge} from '../../components';
 import {selectedRow} from '../../recoil/atom';
 
 import columns from './makeTableHeader';
@@ -17,8 +17,8 @@ const ShoppingDetails=()=> {
         <Flex flexDirection="column" justifyContent="center" alignItems="center"  >
             <Flex>
                 <ShoppingCard />
-                <Flex flexDirection="column"  marginLeft="20px">
-                    <MiniCard data={[{title:"Intent",value:intent}]}/>
+                <Flex flexDirection="column"  marginLeft="20px" title="Hello">
+                    <MiniCard data={[{title:"Intent",value: <Badge className={`${intent?.type?.toLowerCase()} badges`} title={intent?.hoverText}>{intent?.type}</Badge>}]}/>
                     <MiniCard data={[{title:"Results", value:results}]}/>
                     <MiniCard data={[{title:"CPC", value:cpc},{title:'Com.',value:competition}]}/>
             </Flex>
