@@ -1,3 +1,4 @@
+//intent mapping
 const intentMap = {
         '0': {
                 type: "Commercial",
@@ -21,6 +22,7 @@ const intentMap = {
         },
 };
 
+//keyword difficulty mapping
 const keywordDifficulty = {
         '0':{
             rating: "Very easy",
@@ -55,6 +57,8 @@ const keywordDifficulty = {
         }
 };
 
+
+//fetch required mapping based on level of difficulty
 const difficultyLevel = (level) => ({
         5 : level > 85,
         4 : level >=70 && level <=85,
@@ -67,6 +71,9 @@ const difficultyLevel = (level) => ({
 const level = (difficulty) => Object.entries(difficultyLevel(Number(difficulty))).filter((key) => key[1] && key[0])
 
 
+/* normaliseData
+*  normalise to data comming from json in the required format
+*/
 export const normaliseData = (data) =>
      data.map(data =>  ({
         keyword : data[0],

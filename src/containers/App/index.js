@@ -3,13 +3,16 @@ import Header from '../Header'
 import ShoppingDetails from '../ShoppingDetails';
 
 
-const App = () => {
-    return(
+/*
+    App
+    Main App file to render the page
+*/
+const App = () => (
     <>
         <Header />
         <ShoppingDetails />
 
     </>
-)}
+)
 
 export default App

@@ -1,5 +1,10 @@
 import styled from 'styled-components'
 
+
+/*
+    Button
+    Custom Button Component
+*/
 const Button = styled.button`
     background: linear-gradient(45deg, #A528FF 30%, #6F11F3 90%);
     border: 0;

@@ -5,6 +5,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 
 import {selectedRow} from '../../recoil/atom';
 
+//Color maping based on difficulty level
 const colorMapping = {
   very_easy:'#009F81',
   easy:"#59DDAA",
@@ -15,6 +16,9 @@ const colorMapping = {
 }
 
 
+/* Progress
+   Circular Progress Section which will display to difficulty level percentage
+*/
 const Progress = () => {
 
   const {difficulty} = useRecoilValue(selectedRow)

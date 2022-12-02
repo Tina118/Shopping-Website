@@ -5,9 +5,12 @@ import { Typography } from '@mui/material';
 import{IconFlagUS} from 'material-ui-flags';
 
 import  {HorizontalRule}  from '../../components';
-
 import {selectedRow} from '../../recoil/atom';
 
+
+/*  Header
+    Header of the page
+*/
 
 const Header = () => {
     const {keyword} = useRecoilValue(selectedRow)

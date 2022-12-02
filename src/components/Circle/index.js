@@ -1,6 +1,10 @@
 import {Flex} from 'rebass';
 import styled from 'styled-components';
 
+/*
+    Circle
+    Custom component to create dot , which will change background-color based on mapping of classes
+*/
 
 const Circle = styled(Flex)`
     width: 10px;

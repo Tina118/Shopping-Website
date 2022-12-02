@@ -1,8 +1,11 @@
 import {Flex} from 'rebass';
-
 import styled from 'styled-components'
 
 
+/*  
+    Badge
+    Custom Badge Component which will change color based on mapping of classes
+*/
 const Badge=styled(Flex)`
 
     &.badges{

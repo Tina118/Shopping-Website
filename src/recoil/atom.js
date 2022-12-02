@@ -1,11 +1,13 @@
 import { atom } from 'recoil';
 
+//set the activePanel data
 export const activePanel = atom({
     key:'ActivePanel',
     default:'board_match'
 
 })
 
+//set the selected row data
 export const selectedRow = atom({
     key:'SelectedRow',
     default:{keyword : 'shopping in barcelona',

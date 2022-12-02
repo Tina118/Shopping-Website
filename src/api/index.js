@@ -4,7 +4,7 @@ import {normaliseData} from './normaliseData';
 import shoppingInfo from './data.json';
 
 
-
+//normalise the data in the required format for 3 different sections i.3 board_match,related,questions
 const getShoppingData = () =>{ 
 
     const relatedData = normaliseData(shoppingInfo?.raw_related_data)
@@ -14,6 +14,10 @@ const getShoppingData = () =>{
     return {relatedData, boardMatchData, questions}
 }
 
+
+/* useShoppingData
+*  custom hook to fetch data from json file
+*/
 
 const useShoppingData = () => {
     const { data } = useQuery('shopping',getShoppingData);

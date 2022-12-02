@@ -1,15 +1,17 @@
 
 import {useTable} from 'react-table';
 import {useSetRecoilState} from 'recoil'
+
 import { Typography} from '@mui/material';
 
 import {Table,TableHeadCell,TableBodyCell,TableBody,TableRow,TableHead} from './CustomTable'
-
-
 import {selectedRow} from '../../recoil/atom';
 
 
-
+/*
+  ShoppingTable
+  Custom Check-box Table to display relevant data
+*/
 const ShoppingTable= ({ columns, data }) => {
     // Use the state and functions returned from useTable to build your UI
     const {
