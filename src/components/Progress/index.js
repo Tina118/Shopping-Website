@@ -1,58 +1,51 @@
 import {Flex} from 'rebass';
-import { makeStyles } from '@mui/styles';
+import {useRecoilValue} from 'recoil';
+
 import CircularProgress from '@material-ui/core/CircularProgress';
 
-const mapping = {
-    very_easy:'#009F81',
-    easy:"#59DDAA",
-    possible:"#FDC23C",
-    difficult: "#FF8C43",
-    hard:"#FF4953",
-    very_hard:"#D1002F"
+import {selectedRow} from '../../recoil/atom';
+
+const colorMapping = {
+  very_easy:'#009F81',
+  easy:"#59DDAA",
+  possible:"#FDC23C",
+  difficult: "#FF8C43",
+  hard:"#FF4953",
+  very_hard:"#D1002F"
 }
 
-const useStyles = makeStyles(() => ({
-    
-    root: {
-      position: 'relative',
-    },
-    bottom: {
-      color: 'grey',
-    },
-    top: (props)=>({
-      color: props?.color ,
-      position: 'absolute',
-      left: 0,
-    }),
-    
-  }));
-  
-const Progress = ({type = 'possible'}) => {
 
-    const props = {
-        color: mapping[type] || mapping?.possible
-    }
+const Progress = () => {
 
-    const classes = useStyles(props);
-  
+  const {difficulty} = useRecoilValue(selectedRow)
+
     return (
-      <Flex className={classes.root}>
+     
+      <Flex style={{ position: 'relative' }}>
         <CircularProgress
           variant="determinate"
-          className={classes.bottom}
           size={40}
           thickness={10}
           value={100}
-        />
+          style={{
+            color: '#B8B8B8',
+          }}
+        /> 
         <CircularProgress
           variant="determinate"
-          className={classes.top}
+          style={{
+            color:  colorMapping[difficulty?.class],
+            position: 'absolute',
+            left: 0,
+            
+          }}
           size={40}
           thickness={10}
-          value={46}
+          value={difficulty?.percentage}
         />
       </Flex>
-    );
-  }
+      
+    )
+  };
 
 export default Progress;

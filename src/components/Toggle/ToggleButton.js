@@ -15,7 +15,7 @@ const ToggleButton = () => {
         color="primary"
         exclusive
         value={activeId}
-        sx={{height:'14px',marginBottom:'20px'}}
+        sx={{height:'14px',marginBottom:'30px',marginTop:'15px'}}
 
         >
             <Button onClick={()=>handleClick({id:"board_match"})} style={{ background: activeId==="board_match" ?  '#B2FFFF' : '#ebebeb'}} value="Board Match">Board Match</Button>

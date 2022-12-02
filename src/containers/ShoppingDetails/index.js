@@ -20,7 +20,7 @@ const ShoppingDetails=()=> {
         <Flex flexDirection="column" justifyContent="center" alignItems="flex-start" >
             <Flex>
                 <ShoppingCard />
-                <Flex flexDirection="column"  marginLeft="30px" title="Hello">
+                <Flex flexDirection="column"  marginLeft="25px">
                     <MiniCard data={[{title:"Intent",value: <Badge className={`${intent?.type?.toLowerCase()} badges`} title={intent?.hoverText}>{intent?.type}</Badge>}]}/>
                     <MiniCard data={[{title:"Results", value:<Typography ffontSize="20px" fontWeight="bold">{results}</Typography>}]}/>
                     <MiniCard data={[{title:"CPC", value:<Typography ffontSize="20px" fontWeight="bold">{`$ ${cpc}`}</Typography>},{title:'Com.',value:<Typography ffontSize="20px" fontWeight="bold">{competition}</Typography>}]}/>

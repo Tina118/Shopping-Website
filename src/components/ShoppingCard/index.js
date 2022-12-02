@@ -8,7 +8,6 @@ import {selectedRow} from '../../recoil/atom';
 
 
 
-
 const ShoppingCard = () => {
 
     const {volume,difficulty} = useRecoilValue(selectedRow)
@@ -28,11 +27,11 @@ const ShoppingCard = () => {
         
             <Typography fontSize="14px">Keyword difficulty:</Typography>
             <Flex alignItems="center" marginBottom="10px">
-                <Flex flexDirection="column" marginRight="25px" >
+                <Flex flexDirection="column" marginRight="20px" >
                     <Typography fontSize="20px" fontWeight="bold">{percentage} %</Typography>
                     <Typography fontSize="12px">{rating}</Typography>
                 </Flex>
-                <Progress type={difficulty?.class}/>
+                <Progress/>
             </Flex>
             <Typography fontSize="12px">{text}</Typography>
             
