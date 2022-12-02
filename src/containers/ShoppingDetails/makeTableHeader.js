@@ -23,12 +23,12 @@ const columns =[
         Cell:({row : {original : {intent}}}) => <Badge className={`${intent?.type?.toLowerCase()} mini-badge`}>{intent?.inital}</Badge>
     },
     {
-        Header: <Flex alignItems="center"><Typography fontSize="12px" marginRight="7px">Volume</Typography><AlignHorizontalLeftIcon fontSize="16x"/></Flex>,
+        Header: <Flex alignItems="center"><Typography fontSize="14px" >Volume</Typography><AlignHorizontalLeftIcon style={{fontSize:"14px"}}/></Flex>,
         accessor: 'volume',
         width:'10%',
     },
     {
-        Header: <Flex alignItems="center"><Typography fontSize="12px" marginRight="7px">KD %</Typography><AlignHorizontalLeftIcon fontSize="16x"/></Flex>,
+        Header: <Flex alignItems="center"><Typography fontSize="14px" >KD %</Typography><AlignHorizontalLeftIcon style={{fontSize:"14px"}}/></Flex>,
         accessor: 'difficulty',
         width:'15%',
         Cell:({row:{original:{difficulty}}}) => (
@@ -39,17 +39,17 @@ const columns =[
         )
     },
     {
-        Header: <Flex alignItems="center"><Typography fontSize="12px" marginRight="7px">CPC (USD)</Typography><AlignHorizontalLeftIcon fontSize="16x"/></Flex>,
+        Header: <Flex alignItems="center"><Typography fontSize="14px">CPC (USD)</Typography><AlignHorizontalLeftIcon style={{fontSize:"14px"}}/></Flex>,
         accessor: 'cpc',
         width:'30%',
     },
     {
-        Header: <Flex alignItems="center"><Typography fontSize="12px" marginRight="7px">Com.</Typography><AlignHorizontalLeftIcon fontSize="16x"/></Flex>,
+        Header: <Flex alignItems="center"><Typography fontSize="14px" >Com.</Typography><AlignHorizontalLeftIcon style={{fontSize:"14px"}}/></Flex>,
         accessor: 'competition',
         width:'10%',
     },
     {
-        Header: <Flex alignItems="center"><Typography fontSize="12px" marginRight="7px">Results</Typography><AlignHorizontalLeftIcon fontSize="16x"/></Flex>,
+        Header: <Flex alignItems="center"><Typography fontSize="14px" >Results</Typography><AlignHorizontalLeftIcon style={{fontSize:"14px"}}/></Flex>,
         accessor: 'results',
         width:'10%',
     },

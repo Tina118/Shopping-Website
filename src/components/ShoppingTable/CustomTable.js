@@ -19,7 +19,7 @@ export const TableRow = styled.tr`
 
 export const TableHeadCell = styled.th`
     padding:10px;
-    font-size:12px;
+    font-size:14px;
     font-weight:400;
     text-align:left;
     background-color:#F8F8F8;

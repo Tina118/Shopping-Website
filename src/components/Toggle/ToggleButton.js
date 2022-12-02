@@ -15,12 +15,12 @@ const ToggleButton = () => {
         color="primary"
         exclusive
         value={activeId}
-        sx={{height:'14px',marginBottom:'30px',marginTop:'15px'}}
+        sx={{height:'30px',marginBottom:'20px',marginTop:'5px'}}
 
         >
-            <Button onClick={()=>handleClick({id:"board_match"})} style={{ background: activeId==="board_match" ?  '#B2FFFF' : '#ebebeb'}} value="Board Match">Board Match</Button>
-            <Button onClick={()=>handleClick({id:"related"})} style={{ background: activeId==="related" ?  '#B2FFFF' : '#ebebeb'}} value="Related">Related</Button>
-            <Button onClick={()=>handleClick({id:"questions"})} style={{ background: activeId==="questions" ?  '#B2FFFF' : '#ebebeb'}} value="Questions">Questions</Button>
+            <Button onClick={()=>handleClick({id:"board_match"})} style={{ background: activeId==="board_match" ?  '#C3E1F9' : '#ebebeb'}} value="Board Match">Board Match</Button>
+            <Button onClick={()=>handleClick({id:"related"})} style={{ background: activeId==="related" ?  '#C3E1F9' : '#ebebeb'}} value="Related">Related</Button>
+            <Button onClick={()=>handleClick({id:"questions"})} style={{ background: activeId==="questions" ?  '#C3E1F9' : '#ebebeb'}} value="Questions">Questions</Button>
     </ToggleButtonGroup>
 )};
     

@@ -1,6 +1,8 @@
 import {useRecoilValue} from 'recoil';
 import {Flex} from 'rebass';
+
 import { Typography } from '@mui/material';
+import{IconFlagUS} from 'material-ui-flags';
 
 import  {HorizontalRule}  from '../../components';
 
@@ -18,7 +20,9 @@ const Header = () => {
         </Flex>
         <Flex>
             <Typography fontSize="14px">DataBase:</Typography>
-            <Typography fontSize="14px">United States</Typography>
+            <Typography fontSize="14px" marginRight="5px">United States</Typography>
+            <IconFlagUS style={{width:'17px',height:'22px'}}/>
+            
         </Flex>
         <HorizontalRule/>
     </>

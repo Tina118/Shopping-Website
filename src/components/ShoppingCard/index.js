@@ -2,6 +2,8 @@ import {Flex} from 'rebass';
 import {useRecoilValue} from 'recoil';
 
 import { Typography ,Card, CardContent} from '@mui/material';
+import{IconFlagUS} from 'material-ui-flags';
+
 import Progress  from '../Progress';
 import HorizontalRule from '../HorizontalRule';
 
@@ -23,7 +25,10 @@ const ShoppingCard = () => {
             <Flex flexDirection="column" >
                 <Flex flexDirection="column" marginBottom="px">
                     <Typography fontSize="16px">Volume:</Typography>
-                    <Typography fontSize="20px" fontWeight="bold">{volume}</Typography>
+                    <Flex alignItems="center">
+                        <Typography fontSize="20px" fontWeight="bold" marginRight="10px">{volume}</Typography>
+                        <IconFlagUS />
+                    </Flex>
                 </Flex>
 
                 <HorizontalRule />
