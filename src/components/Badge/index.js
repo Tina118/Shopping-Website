@@ -8,7 +8,7 @@ const Badge=styled(Flex)`
     &.badges{
         padding: 4px 14px;
         border-radius: 50rem;
-        font-size: 11px;
+        font-size: 12px;
         align-items:center;
         justify-content:center;
     }
@@ -16,7 +16,7 @@ const Badge=styled(Flex)`
     &.mini-badge{
         padding: 5px 10px;
         border-radius: .27rem;
-        font-size: 10px;
+        font-size: 12px;
         width: 35%;
         align-items:center;
         justify-content:center;

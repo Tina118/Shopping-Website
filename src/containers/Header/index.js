@@ -2,6 +2,8 @@ import {useRecoilValue} from 'recoil';
 import {Flex} from 'rebass';
 import { Typography } from '@mui/material';
 
+import  {HorizontalRule}  from '../../components';
+
 import {selectedRow} from '../../recoil/atom';
 
 
@@ -18,7 +20,7 @@ const Header = () => {
             <Typography fontSize="14px">DataBase:</Typography>
             <Typography fontSize="14px">United States</Typography>
         </Flex>
-        <hr/>
+        <HorizontalRule/>
     </>
 )}
 

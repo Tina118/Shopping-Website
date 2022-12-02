@@ -3,6 +3,7 @@ import {useRecoilValue} from 'recoil';
 
 import { Typography ,Card, CardContent} from '@mui/material';
 import Progress  from '../Progress';
+import HorizontalRule from '../HorizontalRule';
 
 import {selectedRow} from '../../recoil/atom';
 
@@ -17,15 +18,17 @@ const ShoppingCard = () => {
     
     
     return (
-        <Card sx={{maxWidth:'355px', height: '232px'}}>
+        <Card sx={{maxWidth:'355px', height: '270px'}}>
             <CardContent>
             <Flex flexDirection="column" >
                 <Flex flexDirection="column" marginBottom="px">
-                <Typography fontSize="14px">Volume:</Typography>
-                <Typography fontSize="20px" fontWeight="bold">{volume}</Typography>
-            </Flex>
+                    <Typography fontSize="16px">Volume:</Typography>
+                    <Typography fontSize="20px" fontWeight="bold">{volume}</Typography>
+                </Flex>
+
+                <HorizontalRule />
         
-            <Typography fontSize="14px">Keyword difficulty:</Typography>
+            <Typography fontSize="16px">Keyword difficulty:</Typography>
             <Flex alignItems="center" marginBottom="10px">
                 <Flex flexDirection="column" marginRight="20px" >
                     <Typography fontSize="20px" fontWeight="bold">{percentage} %</Typography>
@@ -33,7 +36,7 @@ const ShoppingCard = () => {
                 </Flex>
                 <Progress/>
             </Flex>
-            <Typography fontSize="12px">{text}</Typography>
+            <Typography fontSize="14px">{text}</Typography>
             
     </Flex>
     
