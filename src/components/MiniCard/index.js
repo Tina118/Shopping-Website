@@ -10,7 +10,7 @@ import { Typography ,Card, CardContent} from '@mui/material';
 const MiniCard = ({data}) => 
         <Card sx={{width:'370px', height: '80px', display:"flex", marginBottom: '15px'}}>
             {data.map(({title,value})=> (
-                <CardContent>
+                <CardContent key={title}>
                     <Flex flexDirection="column" marginRight='100px'>
                         <Typography fontSize="16px">{title}</Typography>
                         {value}    

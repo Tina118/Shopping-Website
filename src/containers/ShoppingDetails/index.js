@@ -29,8 +29,8 @@ const ShoppingDetails=()=> {
                                 <Badge className={`${intent?.type?.toLowerCase()} badges`}>{intent?.type}</Badge>
                                 <Typography>{intent?.hoverText}</Typography>
                             </Flex>}]}/>
-                        <MiniCard data={[{title:"Results", value:<Typography ffontSize="20px" fontWeight="bold">{results}</Typography>}]}/>
-                        <MiniCard data={[{title:"CPC", value:<Typography ffontSize="20px" fontWeight="bold">{`$ ${cpc}`}</Typography>},{title:'Com.',value:<Typography ffontSize="20px" fontWeight="bold">{competition}</Typography>}]}/>
+                        <MiniCard data={[{title:"Results", value:<Typography fontSize="20px" fontWeight="bold">{results}</Typography>}]}/>
+                        <MiniCard data={[{title:"CPC", value:<Typography fontSize="20px" fontWeight="bold">{`$ ${cpc}`}</Typography>},{title:'Com.',value:<Typography fontSize="20px" fontWeight="bold">{competition}</Typography>}]}/>
                     </Flex>
                 </Flex>
 

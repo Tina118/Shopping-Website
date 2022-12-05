@@ -13,19 +13,19 @@ import {selectedRow} from '../../recoil/atom';
   Custom Check-box Table to display relevant data
 */
 const ShoppingTable= ({ columns, data }) => {
-    // Use the state and functions returned from useTable to build your UI
     const {
-      getTableProps,
-      getTableBodyProps,
+      getTableProps, 
+      getTableBodyProps, 
       headerGroups,
       rows,
-      prepareRow,
+      prepareRow, 
     } = useTable({
       columns,
       data,
     })
 
     const setSelectedRow = useSetRecoilState(selectedRow)
+
 
   
   // Render the UI for your table
