@@ -14,6 +14,7 @@ const columns =[
     {
         Header: 'Keyword',
         accessor: 'keyword',
+        Cell:({row : {original : {keyword}}})=><Typography fontSize="12px">{keyword}</Typography>,
         width:'35%',
     },
     {
@@ -26,6 +27,7 @@ const columns =[
         Header: <Flex alignItems="center"><Typography fontSize="14px" >Volume</Typography><AlignHorizontalLeftIcon style={{fontSize:"14px"}}/></Flex>,
         accessor: 'volume',
         width:'10%',
+        Cell:({row : {original : {volume}}})=><Typography fontSize="12px">{volume}</Typography>,
     },
     {
         Header: <Flex alignItems="center"><Typography fontSize="14px" >KD %</Typography><AlignHorizontalLeftIcon style={{fontSize:"14px"}}/></Flex>,
@@ -42,15 +44,18 @@ const columns =[
         Header: <Flex alignItems="center"><Typography fontSize="14px">CPC (USD)</Typography><AlignHorizontalLeftIcon style={{fontSize:"14px"}}/></Flex>,
         accessor: 'cpc',
         width:'30%',
+        Cell:({row : {original : {cpc}}})=><Typography fontSize="12px">{cpc}</Typography>,
     },
     {
         Header: <Flex alignItems="center"><Typography fontSize="14px" >Com.</Typography><AlignHorizontalLeftIcon style={{fontSize:"14px"}}/></Flex>,
         accessor: 'competition',
+        Cell:({row : {original : {competition}}})=><Typography fontSize="12px">{competition}</Typography>,
         width:'10%',
     },
     {
         Header: <Flex alignItems="center"><Typography fontSize="14px" >Results</Typography><AlignHorizontalLeftIcon style={{fontSize:"14px"}}/></Flex>,
         accessor: 'results',
+        Cell:({row : {original : {results}}})=><Typography fontSize="12px">{results}</Typography>,
         width:'10%',
     },
     

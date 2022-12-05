@@ -2,8 +2,6 @@
 import {useTable} from 'react-table';
 import {useSetRecoilState} from 'recoil'
 
-import { Typography} from '@mui/material';
-
 import {Table,TableHeadCell,TableBodyCell,TableBody,TableRow,TableHead} from './CustomTable'
 import {selectedRow} from '../../recoil/atom';
 
@@ -47,7 +45,7 @@ const ShoppingTable= ({ columns, data }) => {
             return (
               <TableRow {...row.getRowProps()} onClick={()=>setSelectedRow(row?.original)}>
                 {row.cells.map(cell => {
-                  return <TableBodyCell  {...cell.getCellProps()}><Typography fontSize="12px">{cell.render('Cell')}</Typography></TableBodyCell>
+                  return <TableBodyCell  {...cell.getCellProps()}>{cell.render('Cell')}</TableBodyCell>
                 })}
               </TableRow>
             )
