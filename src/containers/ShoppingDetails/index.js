@@ -19,8 +19,8 @@ const ShoppingDetails=()=> {
     const {intent,results,cpc,competition} = useRecoilValue(selectedRow)
 
     return (
-        <Flex justifyContent="center">
-            <Flex flexDirection="column" justifyContent="center" alignItems="flex-start" >
+        <Flex justifyContent="center" alignItems="center" width="100%">
+            <Flex flexDirection="column" justifyContent="center" alignItems="flex-start"  >
                 <Flex>
                     <ShoppingCard />
                     <Flex flexDirection="column"  marginLeft="25px">
@@ -34,12 +34,16 @@ const ShoppingDetails=()=> {
                     </Flex>
                 </Flex>
 
-                <Flex justifyContent="space-between" alignItems="center" width="100%">
+                <Flex 
+                    justifyContent="space-between" 
+                    alignItems="center" 
+                    width="100%" 
+                    >
                     <ToggleButton  />
                     <Button >Add to List</Button>
                 </Flex>
                 
-                <Flex justifyContent="center">
+                <Flex width="100%">
                     <ToggleContent id="related">{relatedData && <ShoppingTable columns={columns} data={relatedData} />}</ToggleContent>
                     <ToggleContent id="board_match">{boardMatchData && <ShoppingTable columns={columns} data={boardMatchData} />}</ToggleContent>
                     <ToggleContent id="questions">{questions && <ShoppingTable columns={columns} data={questions} />}</ToggleContent>

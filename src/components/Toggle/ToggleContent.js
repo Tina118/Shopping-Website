@@ -13,7 +13,7 @@ const ToggleContent = ({id, component : Component = Flex, ...rest}) => {
     //mapping id with active id to show resective component
     const panelActive = id===activeId
     
-    return panelActive  ? <Component {...rest}/> : null 
+    return panelActive  ? <Component {...rest} width="100%"/> : null 
 }
 
 export default ToggleContent
