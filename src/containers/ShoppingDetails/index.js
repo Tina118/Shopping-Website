@@ -1,5 +1,6 @@
 import {Flex} from 'rebass';
 import {useRecoilValue} from 'recoil';
+import styled from 'styled-components';
 
 import { Typography } from '@mui/material';
 
@@ -7,6 +8,38 @@ import {MiniCard, ShoppingCard, ShoppingTable ,ToggleButton,ToggleContent,Badge,
 import useShoppingData from '../../api';
 import {selectedRow} from '../../recoil/atom';
 import columns from './makeTableHeader';
+
+const ButtonWrapper = styled(Flex)`
+    justify-content:space-between;
+    align-items: center;
+    width:100%;
+
+    @media (max-width: 830px) {
+        flex-direction: column;
+        justify-content:flex-start;
+        align-items:flex-start;
+  }  
+`
+
+const CardWrapper = styled(Flex)`
+    @media (max-width: 830px) {
+        flex-direction: column;
+        width:100%
+    }
+`
+
+const MiniCardWrapper = styled(Flex)`
+    flex-direction:column;
+    margin-left:25px;
+
+    @media (max-width: 830px) {
+        margin:0;
+        margin-top:20px;
+    }
+
+`
+
+
 
 /*
     ShoppingDetails
@@ -20,34 +53,30 @@ const ShoppingDetails=()=> {
 
     return (
         <Flex justifyContent="center" alignItems="center" width="100%">
-            <Flex flexDirection="column" justifyContent="center" alignItems="flex-start"  >
-                <Flex>
+            <Flex flexDirection="column" alignItems="flex-start">
+                <CardWrapper>
                     <ShoppingCard />
-                    <Flex flexDirection="column"  marginLeft="25px">
-                        <MiniCard data={[{title:"Intent",value: 
-                            <Flex flexDirection="column">
-                                <Badge className={`${intent?.type?.toLowerCase()} badges`}>{intent?.type}</Badge>
-                                <Typography>{intent?.hoverText}</Typography>
-                            </Flex>}]}/>
-                        <MiniCard data={[{title:"Results", value:<Typography fontSize="20px" fontWeight="bold">{results}</Typography>}]}/>
-                        <MiniCard data={[{title:"CPC", value:<Typography fontSize="20px" fontWeight="bold">{`$ ${cpc}`}</Typography>},{title:'Com.',value:<Typography fontSize="20px" fontWeight="bold">{competition}</Typography>}]}/>
-                    </Flex>
-                </Flex>
+                    <MiniCardWrapper >
+                    <MiniCard data={[{
+                        title: "Intent", value: <Flex flexDirection="column">
+                            <Badge className={`${intent?.type?.toLowerCase()} badges`}>{intent?.type}</Badge>
+                            <Typography>{intent?.hoverText}</Typography>
+                        </Flex>
+                    }]} />
+                    <MiniCard data={[{ title: "Results", value: <Typography fontSize="20px" fontWeight="bold">{results}</Typography> }]} />
+                    <MiniCard data={[{ title: "CPC", value: <Typography fontSize="20px" fontWeight="bold">{`$ ${cpc}`}</Typography> }, { title: 'Com.', value: <Typography fontSize="20px" fontWeight="bold">{competition}</Typography> }]} />
+                </MiniCardWrapper>
+            </CardWrapper>
 
-                <Flex 
-                    justifyContent="space-between" 
-                    alignItems="center" 
-                    width="100%" 
-                    >
-                    <ToggleButton  />
-                    <Button >Add to List</Button>
-                </Flex>
-                
-                <Flex width="100%">
-                    <ToggleContent id="related">{relatedData && <ShoppingTable columns={columns} data={relatedData} />}</ToggleContent>
-                    <ToggleContent id="board_match">{boardMatchData && <ShoppingTable columns={columns} data={boardMatchData} />}</ToggleContent>
-                    <ToggleContent id="questions">{questions && <ShoppingTable columns={columns} data={questions} />}</ToggleContent>
-                </Flex>
+            <ButtonWrapper>
+                <ToggleButton />
+                <Button>Add to List</Button>
+            </ButtonWrapper>
+            <Flex width="100%">
+                <ToggleContent id="related">{relatedData && <ShoppingTable columns={columns} data={relatedData} />}</ToggleContent>
+                <ToggleContent id="board_match">{boardMatchData && <ShoppingTable columns={columns} data={boardMatchData} />}</ToggleContent>
+                <ToggleContent id="questions">{questions && <ShoppingTable columns={columns} data={questions} />}</ToggleContent>
+            </Flex>
             </Flex>
         </Flex>
         

@@ -1,5 +1,6 @@
 import {Flex} from 'rebass';
 import {useRecoilValue} from 'recoil';
+import styled from 'styled-components';
 
 import { Typography ,Card, CardContent} from '@mui/material';
 import{IconFlagUS} from 'material-ui-flags';
@@ -8,6 +9,14 @@ import Progress  from '../Progress';
 import HorizontalRule from '../HorizontalRule';
 import {selectedRow} from '../../recoil/atom';
 
+const CustomCard = styled(Card)`
+    width: 355px;
+    height: 270px;
+
+    @media (max-width: 830px) {
+        width:100%;
+}
+`
 
 /* 
     Shopping Card
@@ -19,7 +28,7 @@ const ShoppingCard = () => {
     const {rating = "", text="",percentage=""} = difficulty
 
     return (
-        <Card sx={{maxWidth:'355px', height: '270px'}}>
+        <CustomCard>
             <CardContent>
                 <Flex flexDirection="column" >
                     <Flex flexDirection="column" marginBottom="px">
@@ -44,7 +53,7 @@ const ShoppingCard = () => {
             
                 </Flex>
             </CardContent>
-        </Card>
+        </CustomCard>
 )}
 
 export default ShoppingCard
